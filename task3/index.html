@@ -1,0 +1,93 @@
+<!-- Потрачено на выполнение в часах:
+план - 4
+факт - 5
+потратила чуть больше времени на адаптив таблицы (переворот в карточки через data-label), чем рассчитывала 
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Test task 3</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <div class="container">
+        <h1 class="title">Statement Summary</h1>
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>Account</th>
+                    <th>Due date</th>
+                    <th>Amount</th>
+                    <th>Period</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td data-label="Account">Visa - 3412</td>
+                    <td data-label="Due date">04/01/2016</td>
+                    <td data-label="Amount">$1,190</td>
+                    <td data-label="Period">03/01/2016 - 03/31/2016</td>
+                </tr>
+                <tr>
+                    <td data-label="Account">Visa - 6076</td>
+                    <td data-label="Due date">03/01/2016</td>
+                    <td data-label="Amount">$2,443</td>
+                    <td data-label="Period">02/01/2016 - 02/29/2016</td>
+                </tr>
+
+                <tr>
+                    <td data-label="Account">Corporate AMEX</td>
+                    <td data-label="Due date">03/01/2016</td>
+                    <td data-label="Amount">$1,181</td>
+                    <td data-label="Period">02/01/2016 - 02/29/2016</td>
+                </tr>
+                <tr>
+                    <td data-label="Account">Visa - 3412</td>
+                    <td data-label="Due date">02/01/2022</td>
+                    <td data-label="Amount">$8,420</td>
+                    <td data-label="Period">01/01/2015 - 01/31/2016</td>
+                </tr>
+                <tr>
+                    <td data-label="Account">Visa - 3452</td>
+                    <td data-label="Due date">04/01/2019</td>
+                    <td data-label="Amount">$1,190</td>
+                    <td data-label="Period">03/01/2016 - 03/31/2016</td>
+                </tr>
+                <tr>
+                    <td data-label="Account">Visa - 6076</td>
+                    <td data-label="Due date">03/01/2016</td>
+                    <td data-label="Amount">$2,443</td>
+                    <td data-label="Period">02/01/2016 - 02/29/2016</td>
+                </tr>
+                <tr>
+                    <td data-label="Account">Corporate AMEX</td>
+                    <td data-label="Due date">03/01/2017</td>
+                    <td data-label="Amount">$1,181</td>
+                    <td data-label="Period">02/01/2115 - 02/29/2115</td>
+                </tr>
+                <tr>
+                    <td data-label="Account">Visa - 4362</td>
+                    <td data-label="Due date">02/01/2017</td>
+                    <td data-label="Amount">$842</td>
+                    <td data-label="Period">01/01/2016 - 01/31/2016</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <button class="colors-btn">
+            Change colors
+        </button>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.7.1/dist/jquery.min.js"></script>
+    <script src="main.js"></script>
+</body>
+
+</html>

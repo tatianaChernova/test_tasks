@@ -1,0 +1,88 @@
+html,
+body {
+    margin: 0;
+    padding: 0 5px;
+}
+
+/* Общие стили для всех вариантов решения из 5 */
+
+.rectangle__wrapper {
+    margin-bottom: 10px;
+    width: 600px;
+    height: 100px;
+    border-radius: 5px;
+    border: 1px solid #34A68A;
+    background-color: #FFF;
+}
+
+.rectangle__inner {
+    width: 158px;
+    height: 33px;
+    border-radius: 5px;
+    border: 1px solid #F00;
+    background-color: #FFF;
+}
+
+.text {
+    color: #000;
+    font-family: 'Roboto', sans-serif;
+    font-size: 12px;
+    font-weight: 700;
+    line-height: 1;
+    text-align: center;
+}
+
+/* Вариант 1  */
+
+.rectangle__wrapper1 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Вариант 2  */
+
+.rectangle__wrapper2 {
+    display: flex;
+}
+
+.rectangle__inner2 {
+    margin: auto;
+}
+
+/* Вариант 3  */
+
+.rectangle__wrapper3 {
+    position: relative;
+}
+
+.rectangle__inner3 {
+    position: absolute;
+    margin: 0 auto;
+    left: 0;
+    right: 0;
+    top: 50%;
+    transform: translate(0, -50%);
+}
+
+/* Вариант 4  */
+
+.rectangle__wrapper4 {
+    position: relative;
+}
+
+.rectangle__inner4 {
+    position: absolute;
+    margin: 0 auto;
+    left: 0;
+    right: 0;
+    top: calc(50% - 16.5px);
+    bottom: calc(50% - 16.5px);
+}
+
+/* Вариант 5  */
+
+.rectangle__wrapper5 {
+    display: grid;
+    place-items: center;
+}

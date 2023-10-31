@@ -1,0 +1,41 @@
+<!-- Потрачено на выполнение в часах:
+план - 6
+факт - 8
+потратила чуть больше времени на реализацию анимации движения прогресс-бара через jQuery
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Test task 5</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <div class="container">
+        <div class="wrapper">
+            <div class="progress-bar animate">
+                <span class="progress-bar__fill"><span></span></span>
+            </div>
+            <label for="percents__label">Please enter percents:</label>
+            <input class="percents__input" id="percents" type="number" required>
+            <button class="btn percents__submit-btn">Submit</button>
+            <button class="btn percents__clear-btn">Clear</button><br>
+            <div class="result-message"></div>
+            <br>
+            <button class="btn reset-animation-btn" disabled>Reset animation</button>
+        </div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.7.1.js"
+        integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" crossorigin="anonymous"></script>
+    <script src="main.js"></script>
+</body>
+
+</html>

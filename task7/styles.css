@@ -1,0 +1,28 @@
+.btn-success {
+    width: 36px;
+    background-color: green;
+    overflow: hidden;
+}
+
+.btn-text {
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+@media screen and (max-width:767px) {
+    .btn {
+        align-items: start;
+        flex-shrink: 2;
+    }
+
+    .btn-text {
+        text-align: left;
+    }
+}
+
+@media screen and (max-width:576px) {
+    .btn-svg {
+        display: none;
+    }
+
+}

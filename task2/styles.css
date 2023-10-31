@@ -1,0 +1,89 @@
+html,
+body {
+    margin: 0;
+    padding: 0;
+}
+
+.text {
+    color: #000;
+    font-family: 'Roboto', sans-serif;
+    font-size: 12px;
+    font-weight: 700;
+    line-height: 1;
+    text-align: center;
+}
+
+.header,
+.content,
+.sidebar1,
+.sidebar2,
+.footer {
+    /* разместить текст по середине каждого блока */
+    display: grid;
+    place-items: center;
+}
+
+.header {
+    max-width: 800px;
+    height: 50px;
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    z-index: 2;
+    background-color: #FD9191;
+}
+
+.main {
+    margin-top: 50px;
+    max-width: 800px;
+    min-height: calc(100vh - 100px);
+    display: grid;
+    grid-template-columns: 150px auto 150px;
+    grid-template-areas:
+        "sidebar1 content sidebar2";
+    gap: 0;
+}
+
+.sidebar1 {
+    background-color: #E4C1FF;
+    grid-area: sidebar1;
+}
+
+.content {
+    background-color: #94CBFF;
+    grid-area: content;
+}
+
+.sidebar2 {
+    background-color: #FDFF83;
+    grid-area: sidebar2;
+}
+
+.footer {
+    max-width: 800px;
+    height: 50px;
+    background-color: #DFFF9B;
+}
+
+@media (max-width:800px) {
+    .main {
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: calc(100vh - 150px) 50px;
+        grid-template-areas:
+            "content content"
+            "sidebar1 sidebar2";
+    }
+}
+
+@media (max-width:600px) {
+    .main {
+        grid-template-columns: 1fr;
+        grid-template-rows: calc(100vh - 200px) 50px 50px;
+        grid-template-areas:
+            "content"
+            "sidebar1"
+            "sidebar2";
+    }
+}

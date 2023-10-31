@@ -1,0 +1,99 @@
+<!-- Потрачено на выполнение в часах:
+план - 7
+факт - 9
+пыталась найти вариант решения без JS
+-->
+
+<!-- Не удалось выполнить задачу совсем без ипользования JS.
+Использовала:
+1. Bootstrap 5 для настройки одинакоой ширины кнопок при одинаковой высоте (группа кнопок)
+2. text-overflow: ellipsis для текста на кнопках для того, чтобы адаптив не ломался ни при каких условиях
+3. JS для получния данных из input и возврата их в кнопки
+4. Bootstrap 5 для реализации всплывающих подсказок (popover, улучшение юзабилити, когда текст не помещается), инициализация и передача данных в подсказку popover также требует JS -->
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Test task 7</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@500;700&display=swap" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link rel="shortcut icon" href="#">
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <div class="container-xxl">
+        <div class="wrapper mt-2">
+            <div class="inputs mb-5">
+                <form class="input-group d-flex flex-column">
+                    <label class="fs-6 text text-success" for="input-1">Введите название первой кнопки: </label>
+                    <input class="form-control form-control-md w-50 mb-2" type="text" id="input-1" name="input-1"
+                        required>
+                    <label class="fs-6 text text-success" for="input-2">Введите название второй кнопки:</label>
+                    <input class="form-control form-control-md w-50 mb-2" type="text" id="input-2" name="input-2"
+                        required>
+                    <label class="fs-6 text text-success" for="input-3">Введите название третьей кнопки:</label>
+                    <input class="form-control form-control-md w-50 mb-2" type="text" id="input-3" name="input-3"
+                        required>
+                    <button class="btn btn-outline-success w-50" type="submit" value="Submit"
+                        id="submit-btn">Подтвердить</button>
+                </form>
+            </div>
+            <div class="btn-group d-flex flex-nowrap row g-1 vw-90">
+                <button
+                    class="btn btn-1 btn-success border-white d-flex justify-content-center align-items-center text-nowrap col w-30"
+                    data-bs-toggle="popover" data-bs-container="body" data-bs-trigger="hover focus"
+                    data-bs-placement="bottom" data-bs-content="Форум для общительных">
+                    <svg class="btn-svg me-1" width="20px" height="20px" viewBox="0 0 24 24" fill="#fff"
+                        xmlns="http://www.w3.org/2000/svg">
+                        <path
+                            d="M13 20V18C13 15.2386 10.7614 13 8 13C5.23858 13 3 15.2386 3 18V20H13ZM13 20H21V19C21 16.0545 18.7614 14 16 14C14.5867 14 13.3103 14.6255 12.4009 15.6311M11 7C11 8.65685 9.65685 10 8 10C6.34315 10 5 8.65685 5 7C5 5.34315 6.34315 4 8 4C9.65685 4 11 5.34315 11 7ZM18 9C18 10.1046 17.1046 11 16 11C14.8954 11 14 10.1046 14 9C14 7.89543 14.8954 7 16 7C17.1046 7 18 7.89543 18 9Z"
+                            stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                    </svg>
+                    <p class="btn-text mb-0" id="btn-text-1">Форум для общительных</p>
+                </button>
+                <button
+                    class="btn btn-2 btn-success border-white d-flex justify-content-center align-items-center text-nowrap col w-30"
+                    data-bs-toggle="popover" data-bs-container="body" data-bs-trigger="hover focus"
+                    data-bs-placement="bottom" data-bs-content="Связаться с нами">
+                    <svg class="btn-svg me-1" width="20px" height="20px" viewBox="0 0 24 24" fill="#fff"
+                        xmlns="http://www.w3.org/2000/svg">
+                        <path
+                            d="M8 11H8.01M12 11H12.01M16 11H16.01M21 20L17.6757 18.3378C17.4237 18.2118 17.2977 18.1488 17.1656 18.1044C17.0484 18.065 16.9277 18.0365 16.8052 18.0193C16.6672 18 16.5263 18 16.2446 18H6.2C5.07989 18 4.51984 18 4.09202 17.782C3.71569 17.5903 3.40973 17.2843 3.21799 16.908C3 16.4802 3 15.9201 3 14.8V7.2C3 6.07989 3 5.51984 3.21799 5.09202C3.40973 4.71569 3.71569 4.40973 4.09202 4.21799C4.51984 4 5.0799 4 6.2 4H17.8C18.9201 4 19.4802 4 19.908 4.21799C20.2843 4.40973 20.5903 4.71569 20.782 5.09202C21 5.51984 21 6.0799 21 7.2V20Z"
+                            stroke="#green" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                    </svg>
+                    <p class="btn-text mb-0" id="btn-text-2">Связаться с нами</p>
+                </button>
+                <button
+                    class="btn btn-3 btn-success border-white d-flex justify-content-center align-items-center text-nowrap col w-30"
+                    data-bs-toggle="popover" data-bs-container="body" data-bs-trigger="hover focus"
+                    data-bs-placement="bottom" data-bs-content="Дополнительные услуги">
+                    <svg class="btn-svg me-1" width="20px" height="20px" viewBox="0 0 24 24" fill="#fff"
+                        xmlns="http://www.w3.org/2000/svg">
+                        <path
+                            d="M12.75 9C12.75 8.58579 12.4142 8.25 12 8.25C11.5858 8.25 11.25 8.58579 11.25 9L11.25 11.25H9C8.58579 11.25 8.25 11.5858 8.25 12C8.25 12.4142 8.58579 12.75 9 12.75H11.25V15C11.25 15.4142 11.5858 15.75 12 15.75C12.4142 15.75 12.75 15.4142 12.75 15L12.75 12.75H15C15.4142 12.75 15.75 12.4142 15.75 12C15.75 11.5858 15.4142 11.25 15 11.25H12.75V9Z"
+                            fill="#fff" />
+                        <path fill-rule="evenodd" clip-rule="evenodd"
+                            d="M12 1.25C6.06294 1.25 1.25 6.06294 1.25 12C1.25 17.9371 6.06294 22.75 12 22.75C17.9371 22.75 22.75 17.9371 22.75 12C22.75 6.06294 17.9371 1.25 12 1.25ZM2.75 12C2.75 6.89137 6.89137 2.75 12 2.75C17.1086 2.75 21.25 6.89137 21.25 12C21.25 17.1086 17.1086 21.25 12 21.25C6.89137 21.25 2.75 17.1086 2.75 12Z"
+                            fill="#fff" />
+                    </svg>
+                    <p class="btn-text mb-0" id="btn-text-3">Дополнительные услуги</p>
+                </button>
+            </div>
+
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+        crossorigin="anonymous"></script>
+    <script src="main.js"></script>
+</body>
+
+</html>
